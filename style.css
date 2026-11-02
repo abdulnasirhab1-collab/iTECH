@@ -1,14 +1,124 @@
+/* RemoteSure brand colours (sampled from the logo) */
+:root {
+  --rs-navy: #0b356f;
+  --rs-blue: #0c5ab3;
+  --rs-cyan: #0d95c9;
+  --rs-green: #16bb75;
+  --rs-green-dark: #0f9a5f;
+  --bs-primary: #0c5ab3;
+  --bs-primary-rgb: 12, 90, 179;
+  --bs-link-color: #0c5ab3;
+  --bs-link-color-rgb: 12, 90, 179;
+  --bs-link-hover-color: #0b356f;
+  --bs-success: #16bb75;
+  --bs-success-rgb: 22, 187, 117;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--rs-blue);
+  --bs-btn-border-color: var(--rs-blue);
+  --bs-btn-hover-bg: var(--rs-navy);
+  --bs-btn-hover-border-color: var(--rs-navy);
+  --bs-btn-active-bg: var(--rs-navy);
+  --bs-btn-active-border-color: var(--rs-navy);
+  --bs-btn-disabled-bg: var(--rs-blue);
+  --bs-btn-disabled-border-color: var(--rs-blue);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--rs-blue);
+  --bs-btn-border-color: var(--rs-blue);
+  --bs-btn-hover-bg: var(--rs-blue);
+  --bs-btn-hover-border-color: var(--rs-blue);
+  --bs-btn-active-bg: var(--rs-navy);
+  --bs-btn-active-border-color: var(--rs-navy);
+}
+
+/* The "Apply now" button is the main action on a job card, so it uses the logo green */
+.job-card .btn-primary {
+  --bs-btn-bg: var(--rs-green);
+  --bs-btn-border-color: var(--rs-green);
+  --bs-btn-hover-bg: var(--rs-green-dark);
+  --bs-btn-hover-border-color: var(--rs-green-dark);
+  --bs-btn-active-bg: var(--rs-green-dark);
+  --bs-btn-active-border-color: var(--rs-green-dark);
+  font-weight: 600;
+}
+
+.nav-pills {
+  --bs-nav-pills-link-active-bg: var(--rs-blue);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--rs-cyan);
+  box-shadow: 0 0 0 0.2rem rgba(13, 149, 201, 0.2);
+}
+
+.brand-logo {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+.logo-card {
+  background: #fff;
+  border-radius: 0.75rem;
+  padding: 0.4rem 0.75rem;
+  width: fit-content;
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.2);
+}
+
+.logo-card img {
+  display: block;
+  height: 72px;
+  width: auto;
+}
+
+.footer-brand {
+  background: var(--rs-navy);
+}
+
 body {
   background: #f5f7fb;
 }
 
 .hero {
-  background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%);
+  background: linear-gradient(135deg, var(--rs-navy) 0%, var(--rs-blue) 60%, var(--rs-cyan) 100%);
+}
+
+.auth-wrap {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--rs-navy) 0%, var(--rs-blue) 60%, var(--rs-cyan) 100%);
+  display: flex;
+  align-items: center;
+}
+
+.auth-wrap > .container {
+  width: 100%;
+}
+
+.navbar .nav-link.active {
+  color: var(--rs-navy);
+  font-weight: 700;
+  border-bottom: 2px solid var(--rs-green);
 }
 
 .step-locked {
   opacity: 0.5;
   pointer-events: none;
+}
+
+.stat-tile {
+  border: 0;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.08);
+}
+
+.stat-num {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--rs-blue);
+  line-height: 1.2;
 }
 
 .job-card {
@@ -27,6 +137,7 @@ body {
   border-radius: 8px;
   background: #fff;
   border: 1px solid #e5e7eb;
+  flex-shrink: 0;
 }
 
 .job-logo-fallback {
@@ -39,8 +150,56 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .source-badge {
   font-size: 0.75rem;
+}
+
+/* Original logo used inline wherever the site name appears */
+.logo-inline {
+  height: 36px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.logo-inline-sm {
+  height: 30px;
+}
+
+.logo-chip {
+  display: inline-block;
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 0.15rem 0.5rem;
+  vertical-align: middle;
+}
+
+.job-desc {
+  max-height: 9rem;
+  overflow-y: auto;
+  white-space: pre-line;
+}
+
+.min-w-0 {
+  min-width: 0;
+}
+
+.btn-success {
+  --bs-btn-bg: var(--rs-green);
+  --bs-btn-border-color: var(--rs-green);
+  --bs-btn-hover-bg: var(--rs-green-dark);
+  --bs-btn-hover-border-color: var(--rs-green-dark);
+  --bs-btn-active-bg: var(--rs-green-dark);
+  --bs-btn-active-border-color: var(--rs-green-dark);
+}
+
+.btn-outline-success {
+  --bs-btn-color: var(--rs-green-dark);
+  --bs-btn-border-color: var(--rs-green);
+  --bs-btn-hover-bg: var(--rs-green);
+  --bs-btn-hover-border-color: var(--rs-green);
+  --bs-btn-active-bg: var(--rs-green-dark);
+  --bs-btn-active-border-color: var(--rs-green-dark);
 }
